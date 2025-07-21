@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Failure Prediction</title>
+</head>
+<body>
+    <h2>Heart Failure Prediction Form</h2>
+    <form action="/predict" method="POST">
+        <label>Age:</label><input type="text" name="age"><br><br>
+        <label>Anaemia (1=yes, 0=no):</label><input type="text" name="anaemia"><br><br>
+        <label>Creatinine Phosphokinase:</label><input type="text" name="creatinine_phosphokinase"><br><br>
+        <label>Diabetes (1=yes, 0=no):</label><input type="text" name="diabetes"><br><br>
+        <label>Ejection Fraction:</label><input type="text" name="ejection_fraction"><br><br>
+        <label>High Blood Pressure (1=yes, 0=no):</label><input type="text" name="high_blood_pressure"><br><br>
+        <label>Platelets:</label><input type="text" name="platelets"><br><br>
+        <label>Serum Creatinine:</label><input type="text" name="serum_creatinine"><br><br>
+        <label>Serum Sodium:</label><input type="text" name="serum_sodium"><br><br>
+        <label>Sex (1=male, 0=female):</label><input type="text" name="sex"><br><br>
+        <label>Smoking (1=yes, 0=no):</label><input type="text" name="smoking"><br><br>
+        <label>Time (follow-up period in days):</label><input type="text" name="time"><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+        <h3 style="color:green;">{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
